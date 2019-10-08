@@ -44,30 +44,8 @@ public class MainActivity extends AppCompatActivity {
         List<String> strings = (new AppSignatureHelper(this)).getAppSignatures();
         Log.d("SIGNATURE", String.valueOf(strings.size()));
         for (String string : strings) {
-            Log.d("SIGNATURE", string);
+            Toast.makeText(this, string, Toast.LENGTH_SHORT).show();
         }
-        if (1 == 1) {
-            return;
-        }
-
-
-        JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("phoneNumber", "+233576232897");
-        Ion.with(this)
-                .load("https://eef2ee7c.ngrok.io/api/sms")
-                .setJsonObjectBody(jsonObject)
-                .asJsonObject()
-                .withResponse()
-                .setCallback(new FutureCallback<Response<JsonObject>>() {
-                    @Override
-                    public void onCompleted(Exception e, Response<JsonObject> result) {
-                        if (result.getHeaders().code() == 200) {
-                            startSmsListener();
-                        }
-                    }
-                });
-
-
     }
 
     @Override
