@@ -1,6 +1,6 @@
 # Sms-Retrieval-API-Android
 
-Sms must be in the following format:
+This Sms Retrieval API sample retrieves any 4 digit number after the last **"is: "** phrase, like below:
 
 <pre>
 
